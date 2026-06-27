@@ -1,0 +1,17 @@
+.particles {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+.particle {
+  position: absolute;
+  top: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle, #f0dca0 0%, var(--gold) 60%, transparent 70%);
+  box-shadow: 0 0 8px rgba(220, 196, 138, 0.8);
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  will-change: transform, opacity;
+}

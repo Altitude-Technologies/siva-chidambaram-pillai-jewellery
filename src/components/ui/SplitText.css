@@ -1,0 +1,20 @@
+.split-text {
+  margin: 0;
+}
+.split-line {
+  display: block;
+}
+.split-word {
+  display: inline-flex;
+  overflow: hidden;
+  vertical-align: top;
+  padding-bottom: 0.06em;
+  margin-bottom: -0.06em;
+}
+.split-word::after {
+  content: '\00a0';
+}
+.split-word-inner {
+  display: inline-block;
+  will-change: transform;
+}

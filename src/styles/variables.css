@@ -1,0 +1,82 @@
+/* ============================================================
+   SIVA CHIDAMBARAM PILLAI JEWELLERY — Design Tokens
+   ============================================================ */
+:root {
+  /* --- Backgrounds --- */
+  --cream: #faf8f5;
+  --ivory: #f4efe7;
+  --pearl: #fbfaf8;
+  --champagne: #efe6d6;
+  --beige: #e8ddcb;
+  --beige-deep: #ddcfb8;
+
+  /* --- Primary (brand red family) ---
+     --maroon (#af0706) is the bright ACCENT used for buttons, links and
+     headings. The wine/burgundy/cherry shades are deeper oxblood tones so
+     large filled areas (dark sections, footer, hero base) read rich and
+     luxurious instead of loud. */
+  --maroon: #af0706;
+  --wine: #8c0808;
+  --burgundy: #650606;
+  --cherry: #440404;
+  --maroon-soft: rgba(175, 7, 6, 0.08);
+
+  /* --- Accents (Gold family) --- */
+  --gold: #c9a24b;
+  --gold-soft: #d6b873;
+  --rose-gold: #cca38c;
+  --champagne-gold: #dcc48a;
+  --bronze: #9c7a4a;
+  --gold-line: rgba(201, 162, 75, 0.45);
+
+  /* --- Typography colors --- */
+  --charcoal: #2a2530;
+  --warm-black: #1a1418;
+  --ink: #241c1d;
+  --muted: #8a7d72;
+  --muted-light: #b6a899;
+  --on-dark: #f3e9dc;
+  --on-dark-muted: rgba(243, 233, 220, 0.62);
+
+  /* --- Gradients --- */
+  --grad-cream: linear-gradient(180deg, #fbfaf8 0%, #f4efe7 100%);
+  --grad-warm: linear-gradient(135deg, #f7f1e8 0%, #efe6d6 100%);
+  --grad-maroon: linear-gradient(135deg, var(--wine) 0%, var(--burgundy) 60%, var(--cherry) 100%);
+  --grad-gold: linear-gradient(120deg, #b8893a 0%, #e7cd8b 45%, #c9a24b 75%, #9c7a4a 100%);
+  --grad-gold-text: linear-gradient(100deg, #a9803a 0%, #e3c885 40%, #c9a24b 60%, #8c6a3c 100%);
+  --grad-overlay: linear-gradient(180deg, rgba(26, 20, 24, 0) 0%, rgba(26, 20, 24, 0.55) 100%);
+
+  /* --- Typography --- */
+  --serif: 'Cormorant Garamond', 'Times New Roman', serif;
+  --display: 'Marcellus', 'Cormorant Garamond', serif;
+  --sans: 'Jost', 'Segoe UI', system-ui, sans-serif;
+
+  /* --- Shadows --- */
+  --shadow-sm: 0 6px 20px -8px rgba(100, 6, 6, 0.18);
+  --shadow-md: 0 24px 60px -24px rgba(100, 6, 6, 0.28);
+  --shadow-lg: 0 40px 90px -40px rgba(100, 6, 6, 0.4);
+  --shadow-gold: 0 18px 50px -20px rgba(201, 162, 75, 0.45);
+
+  /* --- Layout --- */
+  --container: 1320px;
+  --container-wide: 1560px;
+  --gutter: clamp(1.25rem, 4vw, 4.5rem);
+  --radius: 4px;
+  --radius-lg: 14px;
+
+  /* --- Motion --- */
+  --ease-lux: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-soft: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* --- Base type rendering --- */
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--cream);
+  color-scheme: light;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

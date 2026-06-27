@@ -1,0 +1,43 @@
+.marquee {
+  overflow: hidden;
+  white-space: nowrap;
+  padding-block: 1.6rem;
+  border-block: 1px solid var(--gold-line);
+  background: var(--ivory);
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent,
+    #000 8%,
+    #000 92%,
+    transparent
+  );
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.marquee-dark {
+  background: transparent;
+  border-color: rgba(220, 196, 138, 0.22);
+}
+.marquee-track {
+  display: inline-flex;
+  align-items: center;
+  animation: marquee linear infinite;
+  will-change: transform;
+}
+.marquee-item {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--serif);
+  font-size: clamp(1.4rem, 2.6vw, 2.4rem);
+  font-style: italic;
+  color: var(--maroon);
+  padding-inline: 1.6rem;
+}
+.marquee-dark .marquee-item {
+  color: var(--champagne-gold);
+}
+.marquee-star {
+  color: var(--gold);
+  font-size: 0.7em;
+  margin-left: 1.8rem;
+  font-style: normal;
+}

@@ -1,0 +1,92 @@
+.why {
+  position: relative;
+  overflow: hidden;
+}
+.why .section-header {
+  margin-bottom: 3.6rem;
+}
+.why-grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.3rem;
+}
+.why-card {
+  position: relative;
+  padding: 2.2rem 1.8rem;
+  border-radius: var(--radius-lg);
+  background: rgba(243, 233, 220, 0.04);
+  border: 1px solid rgba(220, 196, 138, 0.16);
+  backdrop-filter: blur(6px);
+  overflow: hidden;
+  transition: transform 0.55s var(--ease-lux), border-color 0.55s ease,
+    background 0.55s ease;
+  animation: floaty-slow 7s ease-in-out infinite;
+  animation-delay: calc(var(--i) * -0.9s);
+}
+.why-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(220, 196, 138, 0.5);
+  background: rgba(243, 233, 220, 0.07);
+}
+.why-card-num {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.4rem;
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  color: rgba(220, 196, 138, 0.4);
+}
+.why-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  color: var(--champagne-gold);
+  border: 1px solid rgba(220, 196, 138, 0.4);
+  margin-bottom: 1.4rem;
+  transition: background 0.5s ease, color 0.5s ease, transform 0.6s var(--ease-lux);
+}
+.why-card:hover .why-icon {
+  background: var(--grad-gold);
+  color: var(--cherry);
+  transform: rotate(-8deg);
+}
+.why-card-title {
+  color: var(--champagne-gold);
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+.why-card p {
+  color: var(--on-dark-muted);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+.why-card-glow {
+  position: absolute;
+  top: -40%;
+  left: -30%;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201, 162, 75, 0.4), transparent 70%);
+  filter: blur(18px);
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+.why-card:hover .why-card-glow {
+  opacity: 1;
+}
+
+@media (max-width: 1024px) {
+  .why-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 520px) {
+  .why-grid {
+    grid-template-columns: 1fr;
+  }
+}

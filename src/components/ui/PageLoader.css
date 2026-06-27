@@ -1,0 +1,21 @@
+.page-loader {
+  min-height: 80vh;
+  display: grid;
+  place-items: center;
+  position: relative;
+  background: var(--cream);
+}
+.page-loader-ring {
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 1px solid var(--gold-line);
+  border-top-color: var(--maroon);
+}
+.page-loader-mark {
+  font-family: var(--display);
+  letter-spacing: 0.08em;
+  color: var(--maroon);
+  font-size: 1.1rem;
+}

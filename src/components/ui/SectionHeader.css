@@ -1,0 +1,20 @@
+.section-header {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  max-width: 720px;
+}
+.section-header.align-center {
+  align-items: center;
+  text-align: center;
+  margin-inline: auto;
+}
+.section-header-title {
+  margin-top: 0.3rem;
+}
+.section-header-intro {
+  max-width: 56ch;
+}
+.align-center .section-header-intro {
+  margin-inline: auto;
+}

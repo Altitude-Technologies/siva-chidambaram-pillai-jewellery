@@ -1,0 +1,63 @@
+.cta {
+  position: relative;
+  overflow: hidden;
+  padding-block: clamp(6rem, 13vw, 11rem);
+  background: var(--cherry);
+}
+.cta-bg {
+  position: absolute;
+  inset: -12% 0;
+  z-index: 0;
+}
+.cta-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.4) saturate(0.85);
+}
+.cta-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    radial-gradient(70% 60% at 50% 40%, rgba(130, 8, 8, 0.5), transparent 70%),
+    linear-gradient(180deg, rgba(26, 20, 24, 0.72), rgba(74, 4, 4, 0.82));
+}
+.cta-inner {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+  max-width: 920px;
+}
+.cta .eyebrow {
+  color: var(--champagne-gold);
+}
+.cta .eyebrow::before,
+.cta .eyebrow::after {
+  background: rgba(220, 196, 138, 0.5);
+}
+.cta-title {
+  color: #fff;
+}
+.cta-title .split-line:last-child {
+  font-style: italic;
+  color: var(--champagne-gold);
+}
+.cta-divider {
+  margin-block: 0.4rem;
+}
+.cta-intro {
+  color: rgba(243, 233, 220, 0.85) !important;
+  max-width: 56ch;
+}
+.cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}

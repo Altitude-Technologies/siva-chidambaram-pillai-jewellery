@@ -1,0 +1,145 @@
+.welcome {
+  position: relative;
+  background: var(--grad-cream);
+  overflow: hidden;
+}
+.welcome-ghost {
+  position: absolute;
+  top: 2%;
+  right: -1%;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(7rem, 22vw, 20rem);
+  color: var(--maroon);
+  opacity: 0.04;
+  pointer-events: none;
+  line-height: 1;
+}
+.welcome-inner {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 6vw, 6rem);
+  align-items: center;
+}
+.welcome-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  max-width: 560px;
+}
+.welcome-title .split-line:nth-child(2) {
+  font-style: italic;
+  color: var(--wine);
+}
+.welcome-lead {
+  max-width: 48ch;
+}
+.welcome-stats {
+  display: flex;
+  gap: 3rem;
+  padding: 1.6rem 0;
+  border-top: 1px solid var(--gold-line);
+  border-bottom: 1px solid var(--gold-line);
+  margin: 0.6rem 0;
+}
+.welcome-stat-num {
+  display: block;
+  font-family: var(--serif);
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  color: var(--maroon);
+  line-height: 1;
+}
+.welcome-stat-label {
+  font-family: var(--display);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.66rem;
+  color: var(--bronze);
+}
+
+/* Media */
+.welcome-media {
+  position: relative;
+  height: clamp(420px, 50vw, 640px);
+}
+.welcome-img {
+  position: absolute;
+  margin: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+.welcome-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.welcome-img-1 {
+  width: 64%;
+  height: 78%;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+.welcome-img-2 {
+  width: 50%;
+  height: 56%;
+  bottom: 0;
+  right: 0;
+  z-index: 3;
+  border: 4px solid var(--cream);
+}
+.welcome-badge {
+  position: absolute;
+  z-index: 4;
+  top: 8%;
+  right: 4%;
+  width: clamp(96px, 11vw, 132px);
+  height: clamp(96px, 11vw, 132px);
+  border-radius: 50%;
+  background: var(--grad-maroon);
+  color: var(--champagne-gold);
+  display: grid;
+  place-content: center;
+  text-align: center;
+  box-shadow: var(--shadow-gold);
+  border: 1px solid var(--gold-line);
+  animation: floaty 6s ease-in-out infinite;
+}
+.welcome-badge-year {
+  font-family: var(--display);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.6rem;
+}
+.welcome-badge-1947 {
+  font-family: var(--serif);
+  font-size: clamp(1.7rem, 3vw, 2.3rem);
+  line-height: 1.1;
+}
+.welcome-badge-sub {
+  font-family: var(--display);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.52rem;
+  opacity: 0.8;
+}
+
+@media (max-width: 900px) {
+  .welcome-inner {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .welcome-media {
+    height: 460px;
+    order: -1;
+  }
+}
+@media (max-width: 480px) {
+  .welcome-stats {
+    gap: 1.8rem;
+  }
+}

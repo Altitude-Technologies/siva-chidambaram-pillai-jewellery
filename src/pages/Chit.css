@@ -1,0 +1,116 @@
+.chit-steps {
+  background: var(--cream);
+}
+.chit-steps .section-header,
+.chit-benefits .section-header {
+  margin-bottom: 3.6rem;
+}
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.4rem;
+}
+.step-card {
+  position: relative;
+  padding: 2.4rem 1.8rem;
+  border-radius: var(--radius-lg);
+  background: var(--pearl);
+  border: 1px solid var(--gold-line);
+  text-align: center;
+  transition: transform 0.5s var(--ease-lux), box-shadow 0.5s ease;
+}
+.step-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-md);
+}
+.step-n {
+  display: inline-grid;
+  place-items: center;
+  width: 70px;
+  height: 70px;
+  margin-bottom: 1.2rem;
+  border-radius: 50%;
+  font-family: var(--serif);
+  font-size: 1.7rem;
+  color: var(--champagne-gold);
+  background: var(--grad-maroon);
+  box-shadow: var(--shadow-gold);
+}
+.step-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+.step-card p {
+  font-size: 0.92rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.step-line {
+  position: absolute;
+  top: 56px;
+  right: -0.7rem;
+  width: 1.4rem;
+  height: 1px;
+  background: var(--gold-line);
+}
+
+/* Benefits */
+.chit-benefits {
+  background: var(--grad-warm);
+}
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.4rem;
+}
+.benefit-card {
+  display: flex;
+  gap: 1.2rem;
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(201, 162, 75, 0.18);
+  transition: transform 0.5s var(--ease-lux), box-shadow 0.5s ease;
+}
+.benefit-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+.benefit-icon {
+  flex: none;
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--maroon);
+  border: 1px solid var(--gold-line);
+  background: var(--pearl);
+}
+.benefit-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.3rem;
+}
+.benefit-card p {
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+@media (max-width: 1024px) {
+  .steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .step-line {
+    display: none;
+  }
+}
+@media (max-width: 560px) {
+  .steps-grid,
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+}

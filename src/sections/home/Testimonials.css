@@ -1,0 +1,103 @@
+.tms {
+  position: relative;
+  background: var(--ivory);
+  overflow: hidden;
+}
+.tms-ghost {
+  position: absolute;
+  top: 6%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--maroon);
+  opacity: 0.04;
+  pointer-events: none;
+  line-height: 0;
+}
+.tms .section-header {
+  margin-bottom: 3.4rem;
+  position: relative;
+  z-index: 2;
+}
+.tms-swiper {
+  padding-block: 1rem 4rem !important;
+  position: relative;
+  z-index: 2;
+}
+.tms-slide {
+  height: auto;
+}
+.tms-card {
+  position: relative;
+  height: 100%;
+  margin: 0;
+  padding: 2.6rem 2.2rem;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  transition: transform 0.5s var(--ease-lux), box-shadow 0.5s ease;
+}
+.tms-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+.tms-card-quote {
+  color: var(--gold);
+  opacity: 0.5;
+}
+.tms-stars {
+  display: flex;
+  gap: 0.2rem;
+  color: var(--gold);
+}
+.tms-card blockquote {
+  font-family: var(--serif);
+  font-size: clamp(1.15rem, 1.7vw, 1.4rem);
+  line-height: 1.55;
+  color: var(--ink);
+  font-style: italic;
+  flex: 1;
+}
+.tms-author {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--gold-line);
+}
+.tms-author img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--champagne-gold);
+}
+.tms-author strong {
+  display: block;
+  font-family: var(--display);
+  color: var(--maroon);
+  letter-spacing: 0.04em;
+  font-weight: 400;
+}
+.tms-author em {
+  font-style: normal;
+  font-size: 0.8rem;
+  color: var(--bronze);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.tms-swiper .swiper-pagination-bullet {
+  background: var(--bronze);
+  opacity: 0.4;
+}
+.tms-swiper .swiper-pagination-bullet-active {
+  background: var(--maroon);
+  opacity: 1;
+  width: 22px;
+  border-radius: 4px;
+}

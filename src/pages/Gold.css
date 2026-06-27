@@ -1,0 +1,168 @@
+/* Why Choose Our Gold Jewellery */
+.why-gold {
+  position: relative;
+  overflow: hidden;
+}
+.why-gold .section-header {
+  margin-bottom: 3.4rem;
+}
+.why-gold-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.4rem;
+}
+.why-gold-card {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 1.8rem 2rem;
+  border-radius: var(--radius-lg);
+  background: rgba(243, 233, 220, 0.04);
+  border: 1px solid rgba(220, 196, 138, 0.18);
+  transition: transform 0.5s var(--ease-lux), border-color 0.5s ease,
+    background 0.5s ease;
+}
+.why-gold-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(220, 196, 138, 0.5);
+  background: rgba(243, 233, 220, 0.07);
+}
+.why-gold-icon {
+  flex: none;
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--champagne-gold);
+  border: 1px solid rgba(220, 196, 138, 0.4);
+  transition: background 0.5s ease, color 0.5s ease;
+}
+.why-gold-card:hover .why-gold-icon {
+  background: var(--grad-gold);
+  color: var(--cherry);
+}
+.why-gold-card h3 {
+  color: var(--champagne-gold);
+  font-size: 1.25rem;
+  line-height: 1.25;
+}
+
+/* Occasion / Precision / Legacy */
+.gold-trio {
+  background: var(--grad-warm);
+}
+.gold-trio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.6rem;
+}
+.gold-trio-grid.cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 1040px;
+  margin-inline: auto;
+}
+.gold-trio-card {
+  padding: 2.6rem 2.2rem;
+  border-radius: var(--radius-lg);
+  background: var(--pearl);
+  border: 1px solid var(--gold-line);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.5s var(--ease-lux), box-shadow 0.5s ease;
+}
+.gold-trio-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+.gold-trio-num {
+  font-family: var(--serif);
+  font-size: 2.4rem;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 0.6rem;
+}
+.gold-trio-card h3 {
+  font-size: 1.55rem;
+  margin-bottom: 0.7rem;
+}
+.gold-trio-card p {
+  color: var(--charcoal);
+  line-height: 1.7;
+}
+
+/* Visit / Savings CTA */
+.gold-cta {
+  position: relative;
+  overflow: hidden;
+  padding-block: clamp(5rem, 11vw, 9rem);
+  background: var(--cherry);
+}
+.gold-cta-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.gold-cta-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.4) saturate(0.85);
+}
+.gold-cta-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    radial-gradient(70% 60% at 50% 40%, rgba(150, 8, 8, 0.5), transparent 70%),
+    linear-gradient(180deg, rgba(26, 20, 24, 0.78), rgba(100, 6, 6, 0.85));
+}
+.gold-cta-inner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.1rem;
+  max-width: 760px;
+}
+.gold-cta .eyebrow {
+  color: var(--champagne-gold);
+}
+.gold-cta .eyebrow::before,
+.gold-cta .eyebrow::after {
+  background: rgba(220, 196, 138, 0.5);
+}
+.gold-cta-title {
+  color: #fff;
+}
+.gold-cta-text {
+  color: rgba(243, 233, 220, 0.82);
+  max-width: 58ch;
+}
+.gold-cta-divider {
+  margin-block: 1.4rem;
+}
+.gold-cta-sub {
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+}
+.gold-cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1.4rem;
+}
+
+@media (max-width: 920px) {
+  .why-gold-grid,
+  .gold-trio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 560px) {
+  .why-gold-grid,
+  .gold-trio-grid {
+    grid-template-columns: 1fr;
+  }
+}

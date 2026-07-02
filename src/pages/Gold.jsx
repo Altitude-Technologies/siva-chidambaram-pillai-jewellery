@@ -115,7 +115,7 @@ export default function Gold() {
       {/* Visit / Savings CTA */}
       <section className="gold-cta">
         <div className="gold-cta-bg">
-          <img src={IMAGES.cta} alt="" loading="lazy" />
+          <img src={IMAGES.gold} alt="" loading="lazy" />
         </div>
         <div className="gold-cta-overlay" />
         <div className="container gold-cta-inner">

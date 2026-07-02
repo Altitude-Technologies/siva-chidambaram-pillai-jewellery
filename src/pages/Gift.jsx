@@ -112,7 +112,7 @@ export default function Gift() {
       {/* Visit / Perfect Gift CTA */}
       <section className="gold-cta">
         <div className="gold-cta-bg">
-          <img src={IMAGES.cta} alt="" loading="lazy" />
+          <img src={IMAGES.gift} alt="" loading="lazy" />
         </div>
         <div className="gold-cta-overlay" />
         <div className="container gold-cta-inner">

@@ -62,7 +62,7 @@ export default function Chit() {
         title="Your Dream Jewellery|Starts Here"
         intro="Two simple, disciplined ways to turn small monthly savings into the jewellery you have always dreamed of."
         image={IMAGES.chitHero}
-        crumbs={['Home', 'Chit']}
+        crumbs={['Home', 'Scheme']}
       />
 
       <Marquee

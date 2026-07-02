@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { MapPin, Clock, Mail, Phone, ArrowRight, MessageCircle, Heart } from 'lucide-react'
+import { MapPin, Clock, Mail, Phone, MessageCircle, Heart } from 'lucide-react'
 import { BRAND, NAV, COLLECTIONS, LOGO } from '../../constants/site'
 import Icon from '../ui/Icon'
 import GoldDivider from '../ui/GoldDivider'
@@ -23,16 +23,6 @@ export default function Footer() {
           <p className="footer-tag">
             Crafting Memories. Preserving Traditions. Since {BRAND.since}.
           </p>
-
-          <form className="newsletter" onSubmit={(e) => e.preventDefault()}>
-            <span className="newsletter-label">The Atelier Letter</span>
-            <div className="newsletter-field">
-              <input type="email" placeholder="Your email address" aria-label="Email" />
-              <button type="submit" aria-label="Subscribe">
-                <ArrowRight size={18} />
-              </button>
-            </div>
-          </form>
         </div>
 
         {/* Links */}

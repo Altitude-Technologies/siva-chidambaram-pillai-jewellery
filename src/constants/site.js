@@ -35,7 +35,7 @@ export const NAV = [
   { label: 'Silver', to: '/silver', mega: 'silver' },
   { label: 'Diamond', to: '/diamond', mega: 'diamond' },
   { label: 'Gift', to: '/gift' },
-  { label: 'Chit', to: '/chit' },
+  { label: 'Scheme', to: '/chit' },
   { label: 'Contact Us', to: '/contact' },
 ]
 

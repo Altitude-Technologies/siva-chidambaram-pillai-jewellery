@@ -6,7 +6,7 @@ import SplitText from '../../components/ui/SplitText'
 import Button from '../../components/ui/Button'
 import Reveal from '../../components/ui/Reveal'
 import Particles from '../../components/ui/Particles'
-import { heroTemple } from '../../constants/images'
+import { heroTemple, heroBg } from '../../constants/images'
 import './Hero.css'
 
 export default function Hero() {
@@ -21,6 +21,9 @@ export default function Hero() {
 
   return (
     <section ref={ref} className="hero">
+      <div className="hero-bg">
+        <img src={heroBg} alt="" loading="eager" />
+      </div>
       <div className="hero-overlay" />
       <div className="hero-glow hero-glow-1" />
       <div className="hero-glow hero-glow-2" />

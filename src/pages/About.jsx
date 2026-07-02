@@ -58,7 +58,7 @@ export default function About() {
       <section className="chairman section dark-bg grain">
         <div className="container chairman-inner">
           <div className="chairman-portrait">
-            <img src={IMAGES.featured2} alt="" loading="lazy" />
+            <img src={IMAGES.chairman} alt="Mr. D. Sivaraj, Chairman" loading="lazy" />
             <span className="chairman-frame" />
           </div>
           <div className="chairman-copy">

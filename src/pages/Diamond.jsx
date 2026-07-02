@@ -115,7 +115,7 @@ export default function Diamond() {
       {/* Visit / Savings CTA */}
       <section className="gold-cta">
         <div className="gold-cta-bg">
-          <img src={IMAGES.cta} alt="" loading="lazy" />
+          <img src={IMAGES.diamond} alt="" loading="lazy" />
         </div>
         <div className="gold-cta-overlay" />
         <div className="container gold-cta-inner">

@@ -29,6 +29,9 @@ const pick = (needle) => {
 // 3D temple render used in the home hero
 export const heroTemple = pick('Bigtemple 3D')
 
+// subtle backdrop image behind the home hero
+export const heroBg = pick('Moments Worth Wedding Section/07')
+
 export const IMAGES = {
   // home — four collection cards
   gold: pick('Four Wonders Sections/Gold'),
@@ -44,6 +47,9 @@ export const IMAGES = {
   // home — welcome / about split
   welcome1: pick('02. About Us/01'),
   welcome2: pick('02. About Us/02'),
+
+  // about — chairman / MD portrait
+  chairman: pick('02. About Us/MD Image'),
 
   // heritage timeline (rendered sepia/grayscale in CSS for a vintage feel)
   heritage1947: pick('02. About Us/01'),

@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cp dist/index.html dist/404.html)",
+      "Bash(touch dist/.nojekyll)",
+      "Bash(rm -rf dist/.git)",
+      "Bash(git -C dist init -q -b gh-pages)",
+      "Bash(git -C dist -c user.name=\"SCP Jewellery\" -c user.email=\"aradicovertech01@gmail.com\" add -A)"
+    ]
+  }
+}

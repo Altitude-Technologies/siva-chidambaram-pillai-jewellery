@@ -14,6 +14,34 @@ html {
   scroll-behavior: auto; /* Lenis handles smoothing */
 }
 
+/* ---------- Custom scrollbar ---------- */
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--gold) rgba(201, 162, 75, 0.12);
+}
+/* WebKit / Chromium */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(201, 162, 75, 0.1);
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 100px;
+  background: linear-gradient(180deg, var(--champagne-gold), var(--gold));
+  border: 3px solid transparent;
+  background-clip: content-box;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--gold), var(--maroon));
+  background-clip: content-box;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
 body {
   min-height: 100vh;
   background: var(--cream);

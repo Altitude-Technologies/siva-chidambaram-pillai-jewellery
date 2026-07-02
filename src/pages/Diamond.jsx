@@ -8,18 +8,18 @@ import Reveal from '../components/ui/Reveal'
 import Button from '../components/ui/Button'
 import Icon from '../components/ui/Icon'
 import GoldDivider from '../components/ui/GoldDivider'
-import { IMAGES, galleryImages } from '../constants/images'
+import { IMAGES, DIAMOND_IMAGES } from '../constants/images'
 import { BRAND } from '../constants/site'
 import { fadeUp, viewportSoft } from '../utils/motion'
 import './Gold.css'
 
 const CATEGORIES = [
-  { name: 'Diamond Rings', icon: 'Diamond', img: IMAGES.diamond, desc: "Elegant diamond rings designed to symbolize love, commitment and life's special milestones." },
-  { name: 'Diamond Earrings', icon: 'Flower2', img: galleryImages[4], desc: 'Graceful diamond earrings crafted to add sparkle and sophistication to every look.' },
-  { name: 'Diamond Necklaces', icon: 'Gem', img: galleryImages[0], desc: 'Exquisite diamond necklaces that reflect luxury, beauty and timeless charm.' },
-  { name: 'Diamond Pendants', icon: 'CircleDot', img: galleryImages[7], desc: 'Beautifully crafted pendants designed for both everyday elegance and special occasions.' },
-  { name: 'Diamond Bangles', icon: 'Sparkles', img: galleryImages[3], desc: 'Stunning diamond bangles that blend modern style with classic craftsmanship.' },
-  { name: 'Bridal Diamond Collection', icon: 'Crown', img: IMAGES.featured3, desc: 'Exclusive bridal diamond sets designed to make your wedding moments truly unforgettable.' },
+  { name: 'Diamond Rings', icon: 'Diamond', img: DIAMOND_IMAGES[0], desc: "Elegant diamond rings designed to symbolize love, commitment and life's special milestones." },
+  { name: 'Diamond Earrings', icon: 'Flower2', img: DIAMOND_IMAGES[1], desc: 'Graceful diamond earrings crafted to add sparkle and sophistication to every look.' },
+  { name: 'Diamond Necklaces', icon: 'Gem', img: DIAMOND_IMAGES[2], desc: 'Exquisite diamond necklaces that reflect luxury, beauty and timeless charm.' },
+  { name: 'Diamond Pendants', icon: 'CircleDot', img: DIAMOND_IMAGES[3], desc: 'Beautifully crafted pendants designed for both everyday elegance and special occasions.' },
+  { name: 'Diamond Bangles', icon: 'Sparkles', img: DIAMOND_IMAGES[4], desc: 'Stunning diamond bangles that blend modern style with classic craftsmanship.' },
+  { name: 'Bridal Diamond Collection', icon: 'Crown', img: DIAMOND_IMAGES[5], desc: 'Exclusive bridal diamond sets designed to make your wedding moments truly unforgettable.' },
 ]
 
 const REASONS = [

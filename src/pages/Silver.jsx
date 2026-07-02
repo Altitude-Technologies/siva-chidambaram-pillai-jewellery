@@ -8,18 +8,18 @@ import Reveal from '../components/ui/Reveal'
 import Button from '../components/ui/Button'
 import Icon from '../components/ui/Icon'
 import GoldDivider from '../components/ui/GoldDivider'
-import { IMAGES, galleryImages } from '../constants/images'
+import { IMAGES, SILVER_IMAGES } from '../constants/images'
 import { BRAND } from '../constants/site'
 import { fadeUp, viewportSoft } from '../utils/motion'
 import './Gold.css'
 
 const CATEGORIES = [
-  { name: 'Silver Pooja Articles', icon: 'Flower2', img: IMAGES.silver, desc: 'Beautifully crafted silver items for religious rituals, spiritual occasions and temple offerings.' },
-  { name: 'Silver Utensils', icon: 'CircleDot', img: galleryImages[5], desc: 'Premium silver utensils that combine tradition, elegance and functionality.' },
-  { name: 'Silver Gift Articles', icon: 'Gift', img: IMAGES.gift, desc: 'Thoughtful silver gifts perfect for weddings, birthdays, anniversaries, housewarming ceremonies and special celebrations.' },
-  { name: 'Decorative Silver Items', icon: 'Sparkles', img: galleryImages[7], desc: 'Intricately designed silver artifacts and decorative pieces that enhance the beauty of your home and office.' },
-  { name: 'Silver Coins', icon: 'Coins', img: IMAGES.scheme, desc: 'Pure silver coins ideal for gifting, investments and festive occasions.' },
-  { name: "Children's Silver Collection", icon: 'Baby', img: galleryImages[0], desc: 'Silver anklets, bracelets, feeding bowls and gifting items specially designed for children.' },
+  { name: 'Silver Pooja Articles', icon: 'Flower2', img: SILVER_IMAGES[0], desc: 'Beautifully crafted silver items for religious rituals, spiritual occasions and temple offerings.' },
+  { name: 'Silver Utensils', icon: 'CircleDot', img: SILVER_IMAGES[1], desc: 'Premium silver utensils that combine tradition, elegance and functionality.' },
+  { name: 'Silver Gift Articles', icon: 'Gift', img: SILVER_IMAGES[2], desc: 'Thoughtful silver gifts perfect for weddings, birthdays, anniversaries, housewarming ceremonies and special celebrations.' },
+  { name: 'Decorative Silver Items', icon: 'Sparkles', img: SILVER_IMAGES[3], desc: 'Intricately designed silver artifacts and decorative pieces that enhance the beauty of your home and office.' },
+  { name: 'Silver Coins', icon: 'Coins', img: SILVER_IMAGES[4], desc: 'Pure silver coins ideal for gifting, investments and festive occasions.' },
+  { name: "Children's Silver Collection", icon: 'Baby', img: SILVER_IMAGES[5], desc: 'Silver anklets, bracelets, feeding bowls and gifting items specially designed for children.' },
 ]
 
 const REASONS = [

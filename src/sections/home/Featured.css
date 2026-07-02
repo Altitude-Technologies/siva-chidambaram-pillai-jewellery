@@ -24,7 +24,9 @@
 
 .featured-media {
   position: relative;
-  aspect-ratio: 5/4;
+  aspect-ratio: 4/3;
+  /* keep the media from getting oversized on wide screens */
+  max-height: 500px;
   border-radius: 16px;
   overflow: hidden;
   box-shadow: var(--shadow-lg);

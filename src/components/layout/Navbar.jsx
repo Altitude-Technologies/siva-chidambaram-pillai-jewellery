@@ -1,14 +1,13 @@
 import { useEffect, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, Phone, ChevronRight } from 'lucide-react'
-import { NAV, MEGA, BRAND } from '../../constants/site'
+import { Menu, X, Phone } from 'lucide-react'
+import { NAV, BRAND, LOGO } from '../../constants/site'
 import Magnetic from '../ui/Magnetic'
 import './Navbar.css'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
-  const [mega, setMega] = useState(null)
   const [mobile, setMobile] = useState(false)
   const { pathname } = useLocation()
 
@@ -21,7 +20,6 @@ export default function Navbar() {
 
   useEffect(() => {
     setMobile(false)
-    setMega(null)
   }, [pathname])
 
   useEffect(() => {
@@ -31,28 +29,17 @@ export default function Navbar() {
 
   return (
     <>
-      <header
-        className={`nav ${scrolled || mega ? 'nav-solid' : ''}`}
-        onMouseLeave={() => setMega(null)}
-      >
+      <header className={`nav ${scrolled ? 'nav-solid' : ''}`}>
         <div className="nav-inner container-wide">
           {/* Brand */}
           <Link to="/" className="nav-brand" aria-label={BRAND.name}>
-            <span className="nav-brand-mark">{BRAND.initials}</span>
-            <span className="nav-brand-text">
-              <span className="nav-brand-name">{BRAND.name}</span>
-              <span className="nav-brand-sub">Jewellery · Est. {BRAND.since}</span>
-            </span>
+            <img className="nav-brand-mark" src={LOGO} alt={`${BRAND.name} logo`} />
           </Link>
 
           {/* Desktop nav */}
           <nav className="nav-links" aria-label="Primary">
             {NAV.map((item) => (
-              <div
-                key={item.to}
-                className="nav-link-wrap"
-                onMouseEnter={() => setMega(item.mega || null)}
-              >
+              <div key={item.to} className="nav-link-wrap">
                 <NavLink
                   to={item.to}
                   className={({ isActive }) =>
@@ -83,40 +70,6 @@ export default function Navbar() {
             </button>
           </div>
         </div>
-
-        {/* Mega menu */}
-        <AnimatePresence>
-          {mega && (
-            <motion.div
-              className="mega"
-              initial={{ opacity: 0, y: -12 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -12 }}
-              transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-              onMouseEnter={() => setMega(mega)}
-            >
-              <div className="mega-inner container-wide">
-                <div className="mega-intro">
-                  <span className="eyebrow">{MEGA[mega].title}</span>
-                  <p>{MEGA[mega].note}</p>
-                  <Link to={`/${mega}`} className="mega-explore">
-                    Explore {MEGA[mega].title} <ChevronRight size={16} />
-                  </Link>
-                </div>
-                <ul className="mega-grid">
-                  {MEGA[mega].links.map((l) => (
-                    <li key={l}>
-                      <Link to={`/${mega}`}>
-                        <span className="mega-dot" />
-                        {l}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
       </header>
 
       {/* Mobile drawer */}
@@ -130,7 +83,7 @@ export default function Navbar() {
           >
             <div className="mobile-nav-bar container">
               <Link to="/" className="nav-brand">
-                <span className="nav-brand-mark">{BRAND.initials}</span>
+                <img className="nav-brand-mark" src={LOGO} alt={`${BRAND.name} logo`} />
               </Link>
               <button
                 className="nav-burger"

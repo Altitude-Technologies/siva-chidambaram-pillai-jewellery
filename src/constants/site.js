@@ -1,6 +1,10 @@
 /* ------------------------------------------------------------------
    Central content / data source for the whole site.
 ------------------------------------------------------------------- */
+
+// logo lives in /public — resolve against the configured base path
+export const LOGO = `${import.meta.env.BASE_URL}SCJ%20Logo.png`
+
 export const BRAND = {
   name: 'Siva Chidambaram Pillai',
   short: 'SCP Jewellery',
@@ -11,17 +15,16 @@ export const BRAND = {
   phone: '+91 98765 43210',
   whatsapp: '919876543210',
   email: 'care@scpjewellery.com',
-  address: ['12, Temple Street, Big Bazaar Road', 'Thanjavur, Tamil Nadu 613001'],
+  address: ['1526, Thoppil Pillayar Kovil, Rajakrisnapuram', 'South Rampart, Thanjavur, Tamil Nadu 613001'],
   hours: [
     { day: 'Monday – Saturday', time: '10:00 AM – 8:30 PM' },
     { day: 'Sunday', time: '10:30 AM – 2:00 PM' },
   ],
-  map: 'https://www.google.com/maps?q=Thanjavur+Tamil+Nadu&output=embed',
+  map: 'https://www.google.com/maps?q=10.7866907,79.1347046&z=17&output=embed',
+  mapLink: 'https://maps.app.goo.gl/WHfvdJMogDwTc6Z99',
   social: [
-    { label: 'Instagram', icon: 'Camera', href: '#' },
-    { label: 'Facebook', icon: 'MessageCircle', href: '#' },
-    { label: 'Youtube', icon: 'Video', href: '#' },
-    { label: 'Twitter', icon: 'AtSign', href: '#' },
+    { label: 'Facebook', icon: 'Facebook', href: 'https://www.facebook.com/sivachidambaramjewellery' },
+    { label: 'Instagram', icon: 'Instagram', href: 'https://www.instagram.com/scpjewellery' },
   ],
 }
 
@@ -172,30 +175,35 @@ export const TESTIMONIALS = [
   {
     name: 'Lakshmi Narayanan',
     place: 'Madurai',
+    gender: 'female',
     rating: 5,
     text: 'Three generations of my family have bought our wedding jewellery here. The purity and the trust are simply unmatched.',
   },
   {
     name: 'Aravind Krishnan',
     place: 'Chennai',
+    gender: 'male',
     rating: 5,
     text: 'The bridal set they crafted for my wife was beyond our imagination. Transparent pricing and flawless finish.',
   },
   {
     name: 'Meenakshi Sundaram',
     place: 'Thanjavur',
+    gender: 'female',
     rating: 5,
     text: 'I joined the AABARANA gold scheme years ago. It made owning gold effortless. A truly caring, family-run house.',
   },
   {
     name: 'Priya Venkatesh',
     place: 'Coimbatore',
+    gender: 'female',
     rating: 5,
     text: 'Their diamond certification gave us complete confidence. The personal consultant remembered every detail.',
   },
   {
     name: 'Ramesh Subramaniam',
     place: 'Tuticorin',
+    gender: 'male',
     rating: 5,
     text: 'Temple jewellery here feels like it carries a soul. Heirloom quality that my daughter will pass on one day.',
   },

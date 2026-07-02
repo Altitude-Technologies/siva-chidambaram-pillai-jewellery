@@ -8,20 +8,20 @@ import Reveal from '../components/ui/Reveal'
 import Button from '../components/ui/Button'
 import Icon from '../components/ui/Icon'
 import GoldDivider from '../components/ui/GoldDivider'
-import { IMAGES, galleryImages } from '../constants/images'
+import { IMAGES, GIFT_IMAGES } from '../constants/images'
 import { BRAND } from '../constants/site'
 import { fadeUp, viewportSoft } from '../utils/motion'
 import './Gold.css'
 
 const CATEGORIES = [
-  { name: 'Wedding Gifts', icon: 'CalendarHeart', img: IMAGES.featured1, desc: 'Elegant and memorable gifts designed to celebrate weddings and new beginnings.' },
-  { name: 'Anniversary Gifts', icon: 'Heart', img: galleryImages[2], desc: 'Timeless gift articles that honor love, commitment and cherished milestones.' },
-  { name: 'Birthday Gifts', icon: 'PartyPopper', img: galleryImages[6], desc: 'Unique and thoughtful gifts to make every birthday celebration extra special.' },
-  { name: 'Baby Shower Gifts', icon: 'Baby', img: galleryImages[0], desc: 'Beautiful gifting options for welcoming new beginnings and precious moments.' },
-  { name: 'Housewarming Gifts', icon: 'Building2', img: IMAGES.welcome2, desc: 'Traditional and decorative gift articles that bring prosperity and happiness to every home.' },
-  { name: 'Festive Gifts', icon: 'Sparkles', img: IMAGES.scheme, desc: 'Special collections curated for Diwali, Akshaya Tritiya, Pongal and other festive celebrations.' },
-  { name: 'Corporate Gifts', icon: 'Award', img: galleryImages[5], desc: 'Premium gifting solutions that leave a lasting impression on clients, employees and business associates.' },
-  { name: 'Return Gifts', icon: 'Gift', img: IMAGES.gift, desc: 'Elegant gift articles perfect for weddings, family functions and special events.' },
+  { name: 'Wedding Gifts', icon: 'CalendarHeart', img: GIFT_IMAGES[0], desc: 'Elegant and memorable gifts designed to celebrate weddings and new beginnings.' },
+  { name: 'Anniversary Gifts', icon: 'Heart', img: GIFT_IMAGES[1], desc: 'Timeless gift articles that honor love, commitment and cherished milestones.' },
+  { name: 'Birthday Gifts', icon: 'PartyPopper', img: GIFT_IMAGES[2], desc: 'Unique and thoughtful gifts to make every birthday celebration extra special.' },
+  { name: 'Baby Shower Gifts', icon: 'Baby', img: GIFT_IMAGES[3], desc: 'Beautiful gifting options for welcoming new beginnings and precious moments.' },
+  { name: 'Housewarming Gifts', icon: 'Building2', img: GIFT_IMAGES[4], desc: 'Traditional and decorative gift articles that bring prosperity and happiness to every home.' },
+  { name: 'Festive Gifts', icon: 'Sparkles', img: GIFT_IMAGES[5], desc: 'Special collections curated for Diwali, Akshaya Tritiya, Pongal and other festive celebrations.' },
+  { name: 'Corporate Gifts', icon: 'Award', img: GIFT_IMAGES[6], desc: 'Premium gifting solutions that leave a lasting impression on clients, employees and business associates.' },
+  { name: 'Return Gifts', icon: 'Gift', img: GIFT_IMAGES[7], desc: 'Elegant gift articles perfect for weddings, family functions and special events.' },
 ]
 
 const REASONS = [

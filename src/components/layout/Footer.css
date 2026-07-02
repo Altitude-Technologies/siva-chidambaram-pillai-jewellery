@@ -34,15 +34,12 @@
   margin-bottom: 1.4rem;
 }
 .footer-logo-mark {
-  width: 58px;
-  height: 58px;
-  display: grid;
-  place-items: center;
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
   border-radius: 50%;
-  border: 1px solid rgba(220, 196, 138, 0.5);
-  font-family: var(--display);
-  font-size: 1.2rem;
-  color: var(--champagne-gold);
+  background: rgba(255, 255, 255, 0.94);
+  padding: 4px;
 }
 .footer-logo-name {
   font-size: 1.5rem;
@@ -225,6 +222,13 @@
   font-family: var(--sans);
   letter-spacing: 0.06em;
   color: var(--on-dark-muted);
+}
+.footer-credit-link {
+  color: var(--champagne-gold);
+  transition: color 0.3s ease;
+}
+.footer-credit-link:hover {
+  color: var(--gold);
 }
 .footer-heart {
   color: var(--rose-gold);

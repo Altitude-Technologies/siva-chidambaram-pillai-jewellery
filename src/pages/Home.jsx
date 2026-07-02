@@ -4,7 +4,6 @@ import Collections from '../sections/home/Collections'
 import Heritage from '../sections/home/Heritage'
 import WhyChooseUs from '../sections/home/WhyChooseUs'
 import Featured from '../sections/home/Featured'
-import GoldScheme from '../sections/home/GoldScheme'
 import Testimonials from '../sections/home/Testimonials'
 import TrustNumbers from '../sections/home/TrustNumbers'
 import Gallery from '../sections/shared/Gallery'
@@ -24,7 +23,6 @@ export default function Home() {
       <Heritage />
       <WhyChooseUs />
       <Featured />
-      <GoldScheme />
       <Testimonials />
       <TrustNumbers />
       <Gallery />

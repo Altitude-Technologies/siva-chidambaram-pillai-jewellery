@@ -1,7 +1,6 @@
 import { useRef, useState, useLayoutEffect } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { TIMELINE } from '../../constants/site'
-import { IMAGES } from '../../constants/images'
 import './Heritage.css'
 
 /**
@@ -66,11 +65,8 @@ export default function Heritage() {
             </div>
             {TIMELINE.map((t, i) => (
               <article className="heritage-card" key={t.year}>
-                <div className="heritage-card-media">
-                  <img src={IMAGES[t.img]} alt={`${t.year} — ${t.title}`} loading="lazy" />
-                  <span className="heritage-year">{t.year}</span>
-                </div>
                 <div className="heritage-card-body">
+                  <span className="heritage-year">{t.year}</span>
                   <span className="heritage-index">
                     0{i + 1} / 0{TIMELINE.length}
                   </span>

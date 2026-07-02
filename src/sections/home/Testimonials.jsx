@@ -2,8 +2,10 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay, Pagination, EffectCoverflow } from 'swiper/modules'
 import { Quote, Star } from 'lucide-react'
 import { TESTIMONIALS } from '../../constants/site'
-import { testimonialAvatars } from '../../constants/images'
 import SectionHeader from '../../components/ui/SectionHeader'
+
+// a male / female emoji stands in for the customer's photo
+const avatarEmoji = (gender) => (gender === 'male' ? '👨' : '👩')
 import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/effect-coverflow'
@@ -40,7 +42,7 @@ export default function Testimonials() {
         }}
         className="tms-swiper"
       >
-        {TESTIMONIALS.map((t, i) => (
+        {TESTIMONIALS.map((t) => (
           <SwiperSlide key={t.name} className="tms-slide">
             <figure className="tms-card">
               <Quote className="tms-card-quote" size={32} />
@@ -51,7 +53,7 @@ export default function Testimonials() {
               </div>
               <blockquote>{t.text}</blockquote>
               <figcaption className="tms-author">
-                <img src={testimonialAvatars[i % testimonialAvatars.length]} alt="" loading="lazy" />
+                <span className="tms-avatar" aria-hidden="true">{avatarEmoji(t.gender)}</span>
                 <span>
                   <strong>{t.name}</strong>
                   <em>{t.place}</em>

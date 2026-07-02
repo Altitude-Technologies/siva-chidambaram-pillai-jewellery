@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { MapPin, Clock, Mail, Phone, ArrowRight, MessageCircle, Heart } from 'lucide-react'
-import { BRAND, NAV, COLLECTIONS } from '../../constants/site'
+import { BRAND, NAV, COLLECTIONS, LOGO } from '../../constants/site'
 import Icon from '../ui/Icon'
 import GoldDivider from '../ui/GoldDivider'
 import Particles from '../ui/Particles'
@@ -14,7 +14,7 @@ export default function Footer() {
         {/* Brand + newsletter */}
         <div className="footer-brand">
           <div className="footer-logo">
-            <span className="footer-logo-mark">{BRAND.initials}</span>
+            <img className="footer-logo-mark" src={LOGO} alt={`${BRAND.name} logo`} />
             <div>
               <h3 className="footer-logo-name">{BRAND.name}</h3>
               <span className="footer-logo-sub">Jewellery · Since {BRAND.since}</span>
@@ -66,11 +66,11 @@ export default function Footer() {
           <h4>Visit the House</h4>
           <p className="footer-info">
             <MapPin size={16} className="fi-icon" />
-            <span>
+            <a href={BRAND.mapLink} target="_blank" rel="noreferrer">
               {BRAND.address.map((l) => (
                 <span key={l}>{l}</span>
               ))}
-            </span>
+            </a>
           </p>
           <p className="footer-info">
             <Clock size={16} className="fi-icon" />
@@ -119,13 +119,28 @@ export default function Footer() {
         </span>
         <div className="footer-social">
           {BRAND.social.map((s) => (
-            <a key={s.label} href={s.href} aria-label={s.label} className="footer-soc">
+            <a
+              key={s.label}
+              href={s.href}
+              aria-label={s.label}
+              className="footer-soc"
+              target="_blank"
+              rel="noreferrer"
+            >
               <Icon name={s.icon} size={17} />
             </a>
           ))}
         </div>
         <span className="footer-credit">
-          Made with <Heart size={13} fill="currentColor" strokeWidth={0} className="footer-heart" /> by Altitude Technologies
+          Made with <Heart size={13} fill="currentColor" strokeWidth={0} className="footer-heart" /> by{' '}
+          <a
+            href="https://altitudetech.in/"
+            target="_blank"
+            rel="noreferrer"
+            className="footer-credit-link"
+          >
+            Altitude Technologies
+          </a>
         </span>
       </div>
     </footer>

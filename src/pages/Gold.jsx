@@ -8,19 +8,19 @@ import Reveal from '../components/ui/Reveal'
 import Button from '../components/ui/Button'
 import Icon from '../components/ui/Icon'
 import GoldDivider from '../components/ui/GoldDivider'
-import { IMAGES, galleryImages } from '../constants/images'
+import { IMAGES, GOLD_IMAGES } from '../constants/images'
 import { BRAND } from '../constants/site'
 import { fadeUp, viewportSoft } from '../utils/motion'
 import './Gold.css'
 
 const CATEGORIES = [
-  { name: 'Bridal Jewellery', icon: 'Crown', img: IMAGES.featured1, desc: 'Grand bridal sets crafted to make your wedding day truly unforgettable.' },
-  { name: 'Necklaces', icon: 'Gem', img: IMAGES.gold, desc: 'Elegant necklace collections ranging from traditional temple designs to modern statement pieces.' },
-  { name: 'Bangles', icon: 'CircleDot', img: galleryImages[3], desc: 'Beautifully crafted bangles that add grace and sophistication to every occasion.' },
-  { name: 'Earrings', icon: 'Flower2', img: galleryImages[4], desc: 'Stylish and timeless earrings designed for everyday elegance and festive celebrations.' },
-  { name: 'Chains', icon: 'Repeat', img: galleryImages[1], desc: 'Premium gold chains available in classic, lightweight and contemporary designs.' },
-  { name: 'Rings', icon: 'Diamond', img: galleryImages[6], desc: 'Perfectly crafted rings that symbolize love, commitment and personal style.' },
-  { name: 'Temple Jewellery', icon: 'Landmark', img: IMAGES.featured2, desc: 'Inspired by South Indian heritage and traditional artistry, crafted for cultural celebrations and weddings.' },
+  { name: 'Bridal Jewellery', icon: 'Crown', img: GOLD_IMAGES[0], desc: 'Grand bridal sets crafted to make your wedding day truly unforgettable.' },
+  { name: 'Necklaces', icon: 'Gem', img: GOLD_IMAGES[1], desc: 'Elegant necklace collections ranging from traditional temple designs to modern statement pieces.' },
+  { name: 'Bangles', icon: 'CircleDot', img: GOLD_IMAGES[2], desc: 'Beautifully crafted bangles that add grace and sophistication to every occasion.' },
+  { name: 'Earrings', icon: 'Flower2', img: GOLD_IMAGES[3], desc: 'Stylish and timeless earrings designed for everyday elegance and festive celebrations.' },
+  { name: 'Chains', icon: 'Repeat', img: GOLD_IMAGES[4], desc: 'Premium gold chains available in classic, lightweight and contemporary designs.' },
+  { name: 'Rings', icon: 'Diamond', img: GOLD_IMAGES[5], desc: 'Perfectly crafted rings that symbolize love, commitment and personal style.' },
+  { name: 'Temple Jewellery', icon: 'Landmark', img: GOLD_IMAGES[6], desc: 'Inspired by South Indian heritage and traditional artistry, crafted for cultural celebrations and weddings.' },
 ]
 
 const REASONS = [

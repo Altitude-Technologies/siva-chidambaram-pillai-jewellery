@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s -L https://altitude-technologies.github.io/siva-chidambaram-pillai-jewellery/about)",
+      "Bash(node -e \"const p=require\\('./package.json'\\);console.log\\(Object.keys\\({...p.dependencies,...p.devDependencies}\\).filter\\(d=>/playwright|puppeteer/.test\\(d\\)\\).join\\(','\\)||'none'\\)\")",
+      "Bash(node -e ' *)",
+      "Bash(grep -iA3 \"error\\\\|fail\")",
+      "Bash(node -e \"const l=require\\('lucide-react'\\); const ks=Object.keys\\(l\\); console.log\\('Facebook:',ks.includes\\('Facebook'\\),'Instagram:',ks.includes\\('Instagram'\\)\\); console.log\\(ks.filter\\(k=>/face|insta|brand/i.test\\(k\\)\\).join\\(', '\\)||'no brand icons'\\);\")",
+      "Bash(curl -sIL \"https://maps.app.goo.gl/WHfvdJMogDwTc6Z99\")"
+    ]
+  }
+}

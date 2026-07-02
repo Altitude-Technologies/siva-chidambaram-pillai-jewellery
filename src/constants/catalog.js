@@ -1,11 +1,8 @@
 /* Per-page category & content data for inner pages. */
-import { img } from './images'
-
 const cat = (name, icon, desc) => ({
   name,
   icon,
   desc,
-  img: img(`scp-${name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`, 900, 1100),
 })
 
 export const GOLD = {

@@ -154,7 +154,7 @@ export default function Contact() {
               <h3>Heart of Thanjavur</h3>
               <p>{BRAND.address.join(', ')}</p>
               <Button
-                href="https://www.google.com/maps?q=Thanjavur+Tamil+Nadu"
+                href={BRAND.mapLink}
                 variant="outline"
                 target="_blank"
                 rel="noreferrer"

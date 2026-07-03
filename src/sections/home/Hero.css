@@ -240,6 +240,8 @@
     justify-content: flex-start;
     /* size to content so there's no empty band above the temple */
     min-height: auto;
+    /* leave room at the bottom so the curve doesn't cover the last button */
+    padding-bottom: clamp(90px, 16vw, 140px);
   }
   .hero-float {
     display: none;
@@ -247,6 +249,12 @@
   .hero-grid {
     flex: 0 0 auto;
     padding-top: clamp(104px, 15vh, 150px);
+  }
+  /* wrap the eyebrow neatly instead of overflowing on narrow screens */
+  .hero-est {
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 0.3rem;
   }
   .hero-content {
     max-width: 640px;

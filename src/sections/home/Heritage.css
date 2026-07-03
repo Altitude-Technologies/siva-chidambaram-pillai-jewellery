@@ -184,12 +184,35 @@
   scroll-snap-align: center;
 }
 
+/* Mobile: stack the timeline as vertical cards (no horizontal scroller) */
 @media (max-width: 860px) {
   .heritage-sticky {
-    padding-block: clamp(3.5rem, 8vw, 5rem) 2rem;
+    position: static;
+    height: auto;
+    overflow: visible;
+    padding-block: clamp(3.5rem, 8vw, 5rem) clamp(2.5rem, 7vw, 3.5rem);
   }
-  .heritage-card {
-    width: 80vw;
+  .heritage-viewport {
+    display: block;
+    overflow: visible;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+  .heritage-viewport.is-scroll {
+    overflow: visible;
+    scroll-snap-type: none;
+  }
+  .heritage-track {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 1.2rem;
+    /* cancel the horizontal-scroll transform on mobile */
+    transform: none !important;
+  }
+  .heritage-card,
+  .heritage-end-card {
+    width: 100%;
   }
   .heritage-intro-card {
     display: none;

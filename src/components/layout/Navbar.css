@@ -220,6 +220,9 @@
   background: var(--grad-maroon);
   display: flex;
   flex-direction: column;
+  /* let the menu scroll when the links don't fit the screen */
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 .mobile-nav::after {
   content: '';
@@ -246,22 +249,24 @@
   color: var(--champagne-gold);
 }
 .mobile-links {
-  flex: 1;
+  /* grow to fill, but never shrink below content — so it scrolls when tall */
+  flex: 1 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 0.4rem;
+  gap: 0.3rem;
+  padding-block: 1rem;
   position: relative;
   z-index: 2;
 }
 .mobile-link {
   display: flex;
   align-items: baseline;
-  gap: 1.1rem;
+  gap: 1rem;
   font-family: var(--serif);
-  font-size: clamp(2rem, 9vw, 3.2rem);
+  font-size: clamp(1.5rem, 6vw, 2.2rem);
   color: var(--on-dark);
-  padding: 0.3rem 0;
+  padding: 0.25rem 0;
   transition: color 0.35s ease, padding-left 0.35s ease;
 }
 .mobile-link:hover {
@@ -303,9 +308,18 @@
   .nav-inner {
     height: 76px;
   }
+  /* keep the logo within the navbar height so it doesn't hang into the hero */
+  .nav-brand-mark {
+    width: 58px;
+    height: 58px;
+  }
 }
 @media (max-width: 560px) {
   .nav-brand-text {
     display: none;
+  }
+  .nav-brand-mark {
+    width: 52px;
+    height: 52px;
   }
 }

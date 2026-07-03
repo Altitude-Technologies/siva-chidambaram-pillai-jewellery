@@ -36,7 +36,7 @@ export default function Navbar() {
             <img className="nav-brand-mark" src={LOGO} alt={`${BRAND.name} logo`} />
             <span className="nav-brand-text">
               <span className="nav-brand-name">{BRAND.name}</span>
-              <span className="nav-brand-sub">Jewellery · Est. {BRAND.since}</span>
+              <span className="nav-brand-sub">Jewellery</span>
             </span>
           </Link>
 

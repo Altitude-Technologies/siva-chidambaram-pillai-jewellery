@@ -29,8 +29,8 @@ const pick = (needle) => {
 // 3D temple render used in the home hero
 export const heroTemple = pick('Bigtemple 3D')
 
-// subtle backdrop image behind the home hero
-export const heroBg = pick('Moments Worth Wedding Section/07')
+// backdrop image behind the home hero
+export const heroBg = pick('01. Home Page/hero/01. Home')
 
 export const IMAGES = {
   // home — four collection cards
@@ -61,14 +61,14 @@ export const IMAGES = {
   // gold savings scheme
   scheme: pick('03. Gold/01. Bridal'),
 
-  // page heroes
-  aboutHero: pick('02. About Us/01'),
-  goldHero: pick('Four Wonders Sections/Gold'),
-  silverHero: pick('Four Wonders Sections/Silver'),
-  diamondHero: pick('Four Wonders Sections/Diamond'),
-  giftHero: pick('Four Wonders Sections/Gift'),
-  chitHero: pick('03. Gold/01. Bridal'),
-  contactHero: pick('01. Home Page/Wedding Collections'),
+  // page heroes — dedicated hero banners (01. Home Page/hero/*)
+  aboutHero: pick('hero/02. About Us'),
+  goldHero: pick('hero/03. Gold'),
+  silverHero: pick('hero/04. Silver'),
+  diamondHero: pick('hero/05. Diamomnd'),
+  giftHero: pick('hero/06. Gift'),
+  chitHero: pick('hero/07. Scheme'),
+  contactHero: pick('hero/08. Contact Us'),
 
   // shared CTA background
   cta: pick('01. Home Page/Wedding Collections'),

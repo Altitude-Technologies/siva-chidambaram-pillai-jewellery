@@ -6,7 +6,7 @@ import SplitText from '../../components/ui/SplitText'
 import Button from '../../components/ui/Button'
 import Reveal from '../../components/ui/Reveal'
 import Particles from '../../components/ui/Particles'
-import { heroTemple, heroBg } from '../../constants/images'
+import { heroBg } from '../../constants/images'
 import './Hero.css'
 
 export default function Hero() {
@@ -16,7 +16,6 @@ export default function Hero() {
     offset: ['start start', 'end start'],
   })
   const contentY = useTransform(scrollYProgress, [0, 1], ['0%', '34%'])
-  const templeY = useTransform(scrollYProgress, [0, 1], ['0%', '-14%'])
   const fade = useTransform(scrollYProgress, [0, 0.8], [1, 0])
 
   return (
@@ -64,15 +63,6 @@ export default function Hero() {
           </Reveal>
         </motion.div>
       </div>
-
-      <motion.div className="hero-temple" style={{ y: templeY, opacity: fade }}>
-        <div className="hero-temple-halo" />
-        <img
-          src={heroTemple}
-          alt="Brihadeeswara Big Temple, Thanjavur"
-          loading="eager"
-        />
-      </motion.div>
 
       <motion.div className="hero-scroll" style={{ opacity: fade }}>
         <span>Scroll to discover</span>

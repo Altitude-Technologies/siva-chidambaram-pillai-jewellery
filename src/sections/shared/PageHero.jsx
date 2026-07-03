@@ -44,7 +44,7 @@ export default function PageHero({
         )}
         {eyebrow && (
           <Reveal variant="fade">
-            <span className="eyebrow center">{eyebrow}</span>
+            <span className="eyebrow">{eyebrow}</span>
           </Reveal>
         )}
         <SplitText text={title} as="h1" className="page-hero-title display-lg" />

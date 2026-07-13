@@ -16,10 +16,11 @@
 declare(strict_types=1);
 
 /** Where enquiries are delivered. */
-const MAIL_TO = 'scpjewellery.in';
+const MAIL_TO = 'scjewellery916@gmail.com';
 
-/** Must be an address on your hosting domain (NOT gmail). */
-const MAIL_FROM      = 'noreply@scpjewellery.com';
+/** Must be an address on the hosting domain (scpjewellery.in) — not gmail.
+ *  Create this mailbox in hPanel > Emails before going live. */
+const MAIL_FROM      = 'noreply@scpjewellery.in';
 const MAIL_FROM_NAME = 'SCP Jewellery Website';
 
 const MAIL_SUBJECT = 'New Enquiry - SCP Jewellery Website';

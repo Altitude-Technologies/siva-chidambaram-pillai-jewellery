@@ -4,13 +4,6 @@
  *
  * Lives next to index.html in the deployed site (Hostinger: public_html/).
  * The React contact form POSTs JSON here; it replies with JSON.
- *
- * ---------------------------------------------------------------------------
- * BEFORE GOING LIVE: set MAIL_FROM to an address on YOUR OWN domain.
- * Hosts (Hostinger included) reject or spam-filter mail whose From address is
- * not on the sending domain — so it must NOT be a gmail.com address.
- * Create e.g. noreply@yourdomain.com in hPanel > Emails, then put it below.
- * ---------------------------------------------------------------------------
  */
 
 declare(strict_types=1);
@@ -18,15 +11,30 @@ declare(strict_types=1);
 /** Where enquiries are delivered. */
 const MAIL_TO = 'scjewellery916@gmail.com';
 
-/** Must be an address on the hosting domain (scpjewellery.in) — not gmail.
- *  Create this mailbox in hPanel > Emails before going live. */
+/** Must be a real mailbox on the hosting domain (create it in hPanel > Emails). */
 const MAIL_FROM      = 'noreply@scpjewellery.in';
 const MAIL_FROM_NAME = 'SCP Jewellery Website';
 
 const MAIL_SUBJECT = 'New Enquiry - SCP Jewellery Website';
 
+/**
+ * Flip to true temporarily to see the real PHP/mail error in the response.
+ * Turn it OFF again once things work — it leaks server details otherwise.
+ */
+const DEBUG = true;
+
 header('Content-Type: application/json; charset=utf-8');
 header('X-Content-Type-Options: nosniff');
+
+// Never render PHP notices/warnings into the body — it would corrupt the JSON.
+ini_set('display_errors', '0');
+
+/** Collects any warning/notice PHP raises (e.g. from mail()). */
+$phpErrors = [];
+set_error_handler(static function (int $no, string $str) use (&$phpErrors): bool {
+    $phpErrors[] = $str;
+    return true; // handled; don't print it
+});
 
 /** Send a JSON response and stop. */
 function respond(int $status, array $payload): void
@@ -36,6 +44,26 @@ function respond(int $status, array $payload): void
     exit;
 }
 
+/** Length check that works even if mbstring isn't installed. */
+function textLen(string $value): int
+{
+    return function_exists('mb_strlen') ? mb_strlen($value) : strlen($value);
+}
+
+// A fatal (missing extension, parse issue in an include, etc.) would otherwise
+// return an empty 500 with no clue. Turn it into JSON we can actually read.
+register_shutdown_function(static function () use (&$phpErrors): void {
+    $fatal = error_get_last();
+    if ($fatal !== null && in_array($fatal['type'], [E_ERROR, E_PARSE, E_CORE_ERROR, E_COMPILE_ERROR], true)) {
+        http_response_code(500);
+        echo json_encode([
+            'ok'    => false,
+            'error' => 'Server error while sending. Please call us instead.',
+            'debug' => DEBUG ? $fatal['message'] . ' @ ' . $fatal['file'] . ':' . $fatal['line'] : null,
+        ], JSON_UNESCAPED_UNICODE);
+    }
+});
+
 if (($_SERVER['REQUEST_METHOD'] ?? '') !== 'POST') {
     respond(405, ['ok' => false, 'error' => 'Method not allowed.']);
 }
@@ -43,11 +71,8 @@ if (($_SERVER['REQUEST_METHOD'] ?? '') !== 'POST') {
 // Accept a JSON body (what the site sends) or a classic form post.
 $contentType = (string) ($_SERVER['CONTENT_TYPE'] ?? '');
 if (stripos($contentType, 'application/json') !== false) {
-    $raw  = (string) file_get_contents('php://input');
-    $data = json_decode($raw, true);
-    if (!is_array($data)) {
-        $data = [];
-    }
+    $decoded = json_decode((string) file_get_contents('php://input'), true);
+    $data    = is_array($decoded) ? $decoded : [];
 } else {
     $data = $_POST;
 }
@@ -56,8 +81,7 @@ $field = static function (string $key) use ($data): string {
     return trim((string) ($data[$key] ?? ''));
 };
 
-// Honeypot: real users never see this field, bots fill it in.
-// Pretend it worked so the bot doesn't retry, but send nothing.
+// Honeypot: people never see this field, bots fill it. Pretend success, send nothing.
 if ($field('company') !== '') {
     respond(200, ['ok' => true]);
 }
@@ -78,7 +102,7 @@ if ($phone === '') {
 if ($email !== '' && !filter_var($email, FILTER_VALIDATE_EMAIL)) {
     $errors[] = 'That email address does not look valid.';
 }
-if (mb_strlen($name) > 120 || mb_strlen($phone) > 40 || mb_strlen($message) > 5000) {
+if (textLen($name) > 120 || textLen($phone) > 40 || textLen($message) > 5000) {
     $errors[] = 'That input is too long.';
 }
 if ($errors !== []) {
@@ -117,13 +141,27 @@ $headers = implode("\r\n", [
     'Content-Type: text/plain; charset=UTF-8',
 ]);
 
-// -f sets the envelope sender; hosts require it to match the domain.
-$sent = @mail(MAIL_TO, MAIL_SUBJECT, $body, $headers, '-f' . MAIL_FROM);
+if (!function_exists('mail')) {
+    respond(500, [
+        'ok'    => false,
+        'error' => 'Mail is not available on this server. Please call us instead.',
+        'debug' => DEBUG ? 'PHP mail() function is disabled.' : null,
+    ]);
+}
+
+// Some hosts refuse the -f envelope-sender param; try with it, then without.
+$sent = mail(MAIL_TO, MAIL_SUBJECT, $body, $headers, '-f' . MAIL_FROM);
+if (!$sent) {
+    $sent = mail(MAIL_TO, MAIL_SUBJECT, $body, $headers);
+}
+
+restore_error_handler();
 
 if (!$sent) {
     respond(500, [
         'ok'    => false,
         'error' => 'Sorry, we could not send your message. Please call us instead.',
+        'debug' => DEBUG ? ($phpErrors !== [] ? implode(' | ', $phpErrors) : 'mail() returned false with no error message.') : null,
     ]);
 }
 

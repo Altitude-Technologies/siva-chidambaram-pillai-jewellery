@@ -9,14 +9,43 @@ import { BRAND } from '../constants/site'
 import { IMAGES } from '../constants/images'
 import './Contact.css'
 
-export default function Contact() {
-  const [sent, setSent] = useState(false)
+// send-mail.php ships in /public, so it sits next to index.html once built.
+// BASE_URL keeps this correct whether the site is at a domain root or a subpath.
+const ENDPOINT = `${import.meta.env.BASE_URL}send-mail.php`
 
-  const submit = (e) => {
+export default function Contact() {
+  const [status, setStatus] = useState('idle') // idle | sending | sent
+  const [error, setError] = useState('')
+
+  const submit = async (e) => {
     e.preventDefault()
-    setSent(true)
-    setTimeout(() => setSent(false), 4000)
-    e.target.reset()
+    if (status === 'sending') return
+
+    const form = e.target
+    const payload = Object.fromEntries(new FormData(form))
+
+    setStatus('sending')
+    setError('')
+
+    try {
+      const res = await fetch(ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      })
+      const result = await res.json().catch(() => ({}))
+
+      if (!res.ok || !result.ok) {
+        throw new Error(result.error || 'Something went wrong. Please try again.')
+      }
+
+      form.reset()
+      setStatus('sent')
+      setTimeout(() => setStatus('idle'), 5000)
+    } catch (err) {
+      setStatus('idle')
+      setError(err.message || 'Could not send your message. Please call us instead.')
+    }
   }
 
   return (
@@ -94,21 +123,21 @@ export default function Contact() {
             </p>
             <form className="contact-form" onSubmit={submit}>
               <div className="field">
-                <input type="text" required placeholder=" " id="c-name" />
+                <input type="text" name="name" required placeholder=" " id="c-name" />
                 <label htmlFor="c-name">Full Name</label>
               </div>
               <div className="field-row">
                 <div className="field">
-                  <input type="tel" required placeholder=" " id="c-phone" />
+                  <input type="tel" name="phone" required placeholder=" " id="c-phone" />
                   <label htmlFor="c-phone">Phone</label>
                 </div>
                 <div className="field">
-                  <input type="email" placeholder=" " id="c-email" />
+                  <input type="email" name="email" placeholder=" " id="c-email" />
                   <label htmlFor="c-email">Email</label>
                 </div>
               </div>
               <div className="field">
-                <select id="c-interest" defaultValue="">
+                <select name="interest" id="c-interest" defaultValue="">
                   <option value="" disabled>
                     I'm interested in…
                   </option>
@@ -120,20 +149,45 @@ export default function Contact() {
                 </select>
               </div>
               <div className="field">
-                <textarea rows="4" placeholder=" " id="c-msg" />
+                <textarea rows="4" name="message" placeholder=" " id="c-msg" />
                 <label htmlFor="c-msg">Your Message</label>
               </div>
-              <button type="submit" className={`contact-submit ${sent ? 'is-sent' : ''}`}>
-                {sent ? (
+
+              {/* honeypot — off-screen for people, irresistible to bots */}
+              <div className="contact-hp" aria-hidden="true">
+                <label htmlFor="c-company">Company</label>
+                <input
+                  type="text"
+                  name="company"
+                  id="c-company"
+                  tabIndex={-1}
+                  autoComplete="off"
+                />
+              </div>
+
+              <button
+                type="submit"
+                className={`contact-submit ${status === 'sent' ? 'is-sent' : ''}`}
+                disabled={status === 'sending'}
+              >
+                {status === 'sent' ? (
                   <>
                     <Check size={18} /> Message Sent
                   </>
+                ) : status === 'sending' ? (
+                  <>Sending…</>
                 ) : (
                   <>
                     <Send size={17} /> Send Enquiry
                   </>
                 )}
               </button>
+
+              {error && (
+                <p className="contact-form-error" role="alert">
+                  {error}
+                </p>
+              )}
             </form>
           </Reveal>
         </div>

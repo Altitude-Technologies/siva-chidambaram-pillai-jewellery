@@ -6,7 +6,13 @@
       "Bash(node -e ' *)",
       "Bash(grep -iA3 \"error\\\\|fail\")",
       "Bash(node -e \"const l=require\\('lucide-react'\\); const ks=Object.keys\\(l\\); console.log\\('Facebook:',ks.includes\\('Facebook'\\),'Instagram:',ks.includes\\('Instagram'\\)\\); console.log\\(ks.filter\\(k=>/face|insta|brand/i.test\\(k\\)\\).join\\(', '\\)||'no brand icons'\\);\")",
-      "Bash(curl -sIL \"https://maps.app.goo.gl/WHfvdJMogDwTc6Z99\")"
+      "Bash(curl -sIL \"https://maps.app.goo.gl/WHfvdJMogDwTc6Z99\")",
+      "Bash(gh auth *)",
+      "Bash(ls package-lock.json)",
+      "Bash(ls -d .github/workflows)",
+      "Bash(ls -la hero/)",
+      "Bash(find \"hero\" -type f)",
+      "Bash(grep -v \"^\\\\.$\\\\|^\\\\.\\\\.$\")"
     ]
   }
 }

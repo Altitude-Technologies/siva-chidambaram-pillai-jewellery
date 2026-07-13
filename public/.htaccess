@@ -1,0 +1,40 @@
+# ---------------------------------------------------------------------------
+# Apache config for the built site (Hostinger: upload alongside index.html).
+# ---------------------------------------------------------------------------
+
+# SPA routing: /gold, /contact, ... are client-side routes. Serve index.html
+# for anything that isn't a real file or directory, so refreshing a deep link
+# doesn't 404. Real files (send-mail.php, /assets/*) are served normally.
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  RewriteRule ^ index.html [L]
+</IfModule>
+
+# Compression
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css application/javascript application/json image/svg+xml
+</IfModule>
+
+# Hashed assets never change, so cache them hard.
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css                "access plus 1 year"
+  ExpiresByType application/javascript  "access plus 1 year"
+  ExpiresByType image/webp              "access plus 1 year"
+  ExpiresByType image/png               "access plus 1 year"
+  ExpiresByType image/jpeg              "access plus 1 year"
+  ExpiresByType image/svg+xml           "access plus 1 year"
+</IfModule>
+
+# ...but always revalidate the HTML entry point so deploys show up immediately.
+<FilesMatch "index\.html$">
+  <IfModule mod_headers.c>
+    Header set Cache-Control "no-cache, must-revalidate"
+  </IfModule>
+</FilesMatch>
